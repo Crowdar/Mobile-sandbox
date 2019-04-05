@@ -36,3 +36,5 @@
 ##enjoy!
 
 
+for more information: https://github.com/budtmo/docker-android
+
