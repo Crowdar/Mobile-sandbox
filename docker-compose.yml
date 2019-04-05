@@ -1,0 +1,53 @@
+# Note: It requires docker-compose 1.13.0
+#
+# Usage: docker-compose up -d
+version: "2.2"
+
+services:
+  # Selenium hub
+  selenium_hub:
+    image: selenium/hub:3.14.0-curium
+    ports:
+      - 4444:4444
+
+ # Using Appium Docker Android  
+  real_device:
+    image: appium/appium
+    depends_on:
+      - selenium_hub
+    network_mode: "service:selenium_hub"
+    privileged: true
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ./.android:/root/.android
+      - $PWD/sync/example/sample_apk:/root/tmp/sample_apk
+    environment:
+      - CONNECT_TO_GRID=true
+      - SELENIUM_HOST=selenium_hub
+      # Enable it for msite testing
+      #- BROWSER_NAME=chrome
+
+  # Docker-Android for Android application testing
+  nexus_7.1.1:
+    image: budtmo/docker-android-x86-7.1.1
+    privileged: true
+    # Increase scale number if needed
+    scale: 1
+    depends_on:
+      - selenium_hub
+      - real_device
+    ports:
+      - 6080:6080
+      - 4723:4723
+    # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
+    volumes: 
+      - $PWD/sync/example/sample_apk:/root/tmp/sample_apk
+    environment:
+      - DEVICE=Nexus 5
+      - CONNECT_TO_GRID=true
+      - APPIUM=true
+      - SELENIUM_HOST=selenium_hub
+      - AUTO_RECORD=false
+
+  
+  
