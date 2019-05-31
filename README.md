@@ -36,6 +36,8 @@
 ---------------------------------------------------------------------------------------
 #### To connect via no-vnc see docker-compose file to view port forwaded to 6080 and open http://localhost:6080 from web browser
 
+##Troubleshooting
+docker exec -it [CONTAINER-NAME] tail -f /var/log/supervisor/docker-android.stdout.log
 
 ##enjoy!
 
