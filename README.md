@@ -1,4 +1,4 @@
-# mobile-dkr-fwk
+# mobile-docker-framework
 ##Mobile sandbox:
 - seleniumGrid
 - appium server
@@ -9,7 +9,7 @@
 - linux
 
 
-##Steps:
+##Steps to start the container:
 - Open Terminal
 - Execute git clone https://bitbucket.org/crowdarautomation/mobile-docker-framework.git
 - Inside clone location execute "sudo apkDirectory=[YOUR_LOCAL_APK_DIRECTORY] docker-compose up" or "sudo apkDirectory=[YOUR_LOCAL_APK_DIRECTORY] docker-compose up -d" (daemon mode)
@@ -18,6 +18,9 @@
                       sudo apkDirectory=/home/apk docker-compose up  (absolute location)
                       
 ---------------------------------------------------------------------------------------
+
+## Steps to consume the framework
+
 #### Now you need to configure your capabilities as follow
 
 #### 		to be executed directly with appium server (http://127.0.0.1:4723/wd/hub)
