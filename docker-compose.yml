@@ -22,7 +22,7 @@ services:
     #  - 6081:6080
     # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     #volumes:
-    #  - /home/juarmas/dev/workspaces/mobile/appiumexampleproject/src/main/resources/mobile/app:/root/tmp/sample_apk
+    #  - ./example/sample_apk:/root/tmp/sample_apk
     #  - ./video-nexus_7.1.1:/tmp/video
     #environment:
     #  - DEVICE=Nexus 5
@@ -45,7 +45,7 @@ services:
     # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     volumes:
       - ./example/sample_apk:/root/tmp/sample_apk
-      - ./video-nexus_7.1.1:/tmp/video
+      - ./video-samsung_s7_9:/tmp/video
     environment:
       - DEVICE=Samsung Galaxy S7
       - CONNECT_TO_GRID=true
@@ -66,7 +66,7 @@ services:
     # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     volumes:
       - ./example/sample_apk:/root/tmp/sample_apk
-      - ./video-nexus_7.1.1:/tmp/video
+      - ./video-samsung_s7_9_1:/tmp/video
     environment:
       - DEVICE=Samsung Galaxy S7
       - CONNECT_TO_GRID=true
