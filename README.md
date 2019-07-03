@@ -7,7 +7,12 @@
 
 ##Requirements:
 - linux
-
+- git client
+     https://www.atlassian.com/git/tutorials/install-git
+- docker 18.09 
+     https://docs.docker.com/install/linux/docker-ce/ubuntu/
+- docker compose 1.24
+     https://docs.docker.com/compose/install/
 
 ##Steps to start the container:
 - Open Terminal
