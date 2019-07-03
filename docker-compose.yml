@@ -22,7 +22,7 @@ services:
     #  - 6081:6080
     # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     #volumes:
-    #  - ./example/sample_apk:/root/tmp/sample_apk
+    #  - ${apkDirectory}:/root/tmp/sample_apk
     #  - ./video-nexus_7.1.1:/tmp/video
     #environment:
     #  - DEVICE=Nexus 5
@@ -33,7 +33,7 @@ services:
 
 
  # Docker-Android for Android application testing
-  samsung_s7_9:
+  samsung_s7_9.0:
     image: budtmo/docker-android-x86-9.0
     privileged: true
     # Increase scale number if needed
@@ -41,10 +41,10 @@ services:
     depends_on:
       - selenium_hub
     ports:
-      - 6082:6080
+      - 6080:6080
     # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     volumes:
-      - ./example/sample_apk:/root/tmp/sample_apk
+      - ${apkDirectory}:/root/tmp/sample_apk
       - ./video-samsung_s7_9:/tmp/video
     environment:
       - DEVICE=Samsung Galaxy S7
@@ -52,25 +52,3 @@ services:
       - APPIUM=true
       - SELENIUM_HOST=selenium_hub
       - AUTO_RECORD=true
-
-# Docker-Android for Android application testing
-  samsung_s7_9_1:
-    image: budtmo/docker-android-x86-9.0
-    privileged: true
-    # Increase scale number if needed
-    scale: 1
-    depends_on:
-      - selenium_hub
-    ports:
-      - 6083:6080
-    # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
-    volumes:
-      - ./example/sample_apk:/root/tmp/sample_apk
-      - ./video-samsung_s7_9_1:/tmp/video
-    environment:
-      - DEVICE=Samsung Galaxy S7
-      - CONNECT_TO_GRID=true
-      - APPIUM=true
-      - SELENIUM_HOST=selenium_hub
-      - AUTO_RECORD=true
-    
