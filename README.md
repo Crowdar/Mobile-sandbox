@@ -7,20 +7,21 @@
 
 ##Requirements:
 - linux
-- git client
+- git client   
      https://www.atlassian.com/git/tutorials/install-git
-- docker 18.09 
+- docker 18.09    
      https://docs.docker.com/install/linux/docker-ce/ubuntu/
-- docker compose 1.24
+- docker compose 1.24   
      https://docs.docker.com/compose/install/
 
 ##Steps to start the container:
 - Open Terminal
 - Execute git clone https://bitbucket.org/crowdarautomation/mobile-docker-framework.git
 - Inside clone location execute "sudo apkDirectory=[YOUR_LOCAL_APK_DIRECTORY] docker-compose up" or "sudo apkDirectory=[YOUR_LOCAL_APK_DIRECTORY] docker-compose up -d" (daemon mode)
-    - note: [YOUR_LOCAL_APK_DIRECTORY]: refers to the shared volume to be accessed by the container.
-        for example:  sudo apkDirectory=./example/sample_apk docker-compose up (relative location)
-                      sudo apkDirectory=/home/apk docker-compose up  (absolute location)
+    - note: [YOUR_LOCAL_APK_DIRECTORY]: refers to the shared volume to be accessed by the container.   
+        for example:      
+                    sudo apkDirectory=./example/sample_apk docker-compose up (relative location)   
+                    sudo apkDirectory=/home/apk docker-compose up  (absolute location)   
                       
 ---------------------------------------------------------------------------------------
 
@@ -31,7 +32,7 @@
 #### 		to be executed directly with appium server (http://127.0.0.1:4723/wd/hub)
         	DesiredCapabilities capabilities = DesiredCapabilities.android();
         	capabilities.setCapability("deviceName", "samsung_galaxy_s7_9.0");
-            capabilities.setCapability(MobileCapabilityType.APP, "/root/tmp/sample_apk/sample_apk_debug.apk");
+            capabilities.setCapability(MobileCapabilityType.APP, "/root/tmp/sample_apk/sample_apk_debug.apk");   
                note: /root/tmp/sample_apk/ .... refers to to the container shared volume location previously defined.
                      in your case need to be setted as follow /root/tmp/sample_apk/[YOUR_APK_FILE].apk
         	
@@ -40,7 +41,7 @@
         	capabilities.setCapability("deviceName","Android Emulator");
         	capabilities.setCapability("automationName","automationName");
             capabilities.setCapability("browserName","android");
-        	capabilities.setCapability("app", "/root/tmp/sample_apk/sample_apk_debug.apk");
+        	capabilities.setCapability("app", "/root/tmp/sample_apk/sample_apk_debug.apk");   
      	         note: /root/tmp/sample_apk/ .... refers to to the container shared volume location previously defined.
                      in your case need to be setted as follow /root/tmp/sample_apk/[YOUR_APK_FILE].apk
 			
