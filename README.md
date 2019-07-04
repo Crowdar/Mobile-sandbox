@@ -1,3 +1,5 @@
+Provides a testing environment integrating components needed to mobile devices testing executions
+
 ##Mobile sandbox components:
 - seleniumGrid
 - appium server
