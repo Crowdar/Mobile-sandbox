@@ -1,9 +1,9 @@
-# mobile-docker-framework
-##Mobile sandbox:
+##Mobile sandbox components:
 - seleniumGrid
 - appium server
 - android emulator
-
+- no-vnc
+- video recorder
 
 ##Requirements:
 - linux
@@ -14,7 +14,7 @@
 - docker compose 1.24   
      https://docs.docker.com/compose/install/
 
-##Steps to start the container:
+##Steps to start the sandbox:
 - Open Terminal
 - Execute git clone https://bitbucket.org/crowdarautomation/mobile-docker-framework.git
 - Inside clone location execute "sudo apkDirectory=[YOUR_LOCAL_APK_DIRECTORY] docker-compose up" or "sudo apkDirectory=[YOUR_LOCAL_APK_DIRECTORY] docker-compose up -d" (daemon mode)
@@ -25,7 +25,7 @@
                       
 ---------------------------------------------------------------------------------------
 
-## Steps to consume the framework
+## Steps to consume the sandbox
 
 #### Now you need to configure your capabilities as follow
 
